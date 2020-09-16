@@ -5,7 +5,9 @@ class SeasonDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lat: null
+            lat: null,
+            errMessage:""
+
         };
     }
     
@@ -14,7 +16,10 @@ class SeasonDisplay extends React.Component {
                 
                 this.setState({lat :position.coords.latitude})
             },
-            (err) => console.log(err)
+            (err) => {
+                console.log(err)
+                this.setState({errMessage : err.message})
+            }
         );
 
     componentDidMount(){
@@ -26,7 +31,19 @@ class SeasonDisplay extends React.Component {
         return (
             <>
             <div>Season display</div>
-            <p>latitude :{this.state.lat} </p>
+
+
+            
+                {
+                    this.state.lat ? 
+                    (
+                        <p>latitude : {this.state.lat}</p>
+                    ):
+                    (
+                        <>Error : {this.state.errMessage}</>
+                    )
+                }
+            
         </>
         );
     }
