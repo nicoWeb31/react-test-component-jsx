@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import ViewSection from './component/jsx-content-props/ViewSection';
+import ViewClass from './component/section-Class-component/ViewClass';
 
 const App = () => {
 
@@ -9,6 +10,9 @@ const App = () => {
     return (
 <>
     <ViewSection/>
+
+        <ViewClass/>
+
 </>
     );
 }

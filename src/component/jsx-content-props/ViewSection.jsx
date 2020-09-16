@@ -6,6 +6,11 @@ import CommentItems from './Comment/CommentItems';
 
 const ViewSection = () => {
     return (
+
+<>
+
+<h1>Content - jsx - props</h1>
+
         <div className="ui container comments" >
         
         <ApprovalCard>
@@ -33,6 +38,7 @@ const ViewSection = () => {
 
 
         </div>
+        </>
     );
 }
 
