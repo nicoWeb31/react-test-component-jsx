@@ -1,52 +1,30 @@
+
 import React from 'react';
 
-
-class SeasonDisplay extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            lat: null,
-            errMessage:""
-
-        };
+const getSeason =(lat,month)=>{
+    if( month > 2 && month > 9 ){
+        return lat > 0 ? "summer" : "winter"
+    }else{
+        return lat < 0 ? "winter" : "summer"
     }
+}
+
+
+const SeasonDisplay = ({lat}) => {
+
+    //month js de 0 - 11
+    //northern 0 1 3 9 10 11 winter
+    //southern 3 4 5 6 7 8 winter
+    const currentMonth = new Date().getMonth();
+
     
-    posit = () => window.navigator.geolocation.getCurrentPosition(
-            (position)=> {
-                
-                this.setState({lat :position.coords.latitude})
-            },
-            (err) => {
-                console.log(err)
-                this.setState({errMessage : err.message})
+    return (
+        <div>
+            {
+                getSeason(lat,currentMonth)
             }
-        );
-
-    componentDidMount(){
-        this.posit();
-    }    
-        
-    render() {
-
-        return (
-            <>
-            <div>Season display</div>
-
-
-            
-                {
-                    this.state.lat ? 
-                    (
-                        <p>latitude : {this.state.lat}</p>
-                    ):
-                    (
-                        <>Error : {this.state.errMessage}</>
-                    )
-                }
-            
-        </>
-        );
-    }
+        </div>
+    );
 }
 
 export default SeasonDisplay;
