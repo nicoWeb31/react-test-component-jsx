@@ -23,18 +23,31 @@ class AppClassComponent extends React.Component {
 
     componentDidMount(){
         this.posit();
-    }    
+    }
+    
+
+    //---------------------//
+    renderContent = () =>{
+        const {lat,errMessage} = this.state
+
+        if(errMessage && !lat){
+            return <div>Error :{errMessage}</div>
+        }
+        if(!errMessage && lat){
+            return <SeasonDisplay lat={lat}/>
+        }
+        else{return <Spinner message="please accept location request !"/>}
+
+    }
         
     render() {
-        const {lat,errMessage} = this.state
+
 
         return (
             <>
             <div>Season display</div>
 
-            {errMessage && !lat && <div>Error :{errMessage}</div>}
-            {!errMessage && lat && <SeasonDisplay lat={lat}/>}
-            {!errMessage && !lat && <Spinner/>}
+            {this.renderContent()}
 
 
         </>
