@@ -1,6 +1,6 @@
 import React from 'react';
 import SeasonDisplay from './SeasonDisplay';
-
+import Spinner from "./Spinner"
 class AppClassComponent extends React.Component {
 //
         // this.state = {
@@ -34,7 +34,7 @@ class AppClassComponent extends React.Component {
 
             {errMessage && !lat && <div>Error :{errMessage}</div>}
             {!errMessage && lat && <SeasonDisplay lat={lat}/>}
-            {!errMessage && !lat && <div>loading.....</div>}
+            {!errMessage && !lat && <Spinner/>}
 
 
         </>

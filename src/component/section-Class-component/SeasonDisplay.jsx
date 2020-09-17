@@ -31,6 +31,8 @@ const SeasonDisplay = ({ lat }) => {
 
 
     return (
+
+
         <div className={`_season-display ${season}`}>
             <i class={`${icon} icon massive _iconeLeflt`}></i>
             <h1>
