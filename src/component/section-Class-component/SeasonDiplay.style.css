@@ -1,0 +1,35 @@
+._iconeRigth{
+    position: relative;
+
+    
+}
+
+._iconeLeflt{
+    position: relative;
+
+}
+
+._season-display.winter i{
+    color: blue;
+}
+
+._season-display.summer i{
+    color:yellow;
+}
+
+
+
+._season-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.summer{
+background-color: yellowgreen;
+}
+
+.winter{
+    background-color: turquoise;
+}

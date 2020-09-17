@@ -1,5 +1,7 @@
-
 import React from 'react';
+
+import "./SeasonDiplay.style.css"
+
 
 const seasonConfig = {
     summer :{text : "lets hit the beach", icon: "sun"},
@@ -29,12 +31,12 @@ const SeasonDisplay = ({ lat }) => {
 
 
     return (
-        <div>
-            <i class={`${icon} icon`}></i>
+        <div className={`_season-display ${season}`}>
+            <i class={`${icon} icon massive _iconeLeflt`}></i>
             <h1>
                 {text}
             </h1>
-            <i class={`${icon} icon`}></i>
+            <i class={`${icon} icon massive _iconeRigth`}></i>
         </div>
     );
 }
