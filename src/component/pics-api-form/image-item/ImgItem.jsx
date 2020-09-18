@@ -1,9 +1,13 @@
 import React from 'react';
 
 
-const ImgItem = () => {
+const ImgItem = ({photo}) => {
+    console.log(photo)
+
     return (
-        <h1></h1>
+        <>
+            <img src={photo.small} alt=""/>
+        </>
     );
 }
 

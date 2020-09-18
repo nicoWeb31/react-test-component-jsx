@@ -1,9 +1,17 @@
 import React from 'react';
+import ImgItem from '../image-item/ImgItem'
 
-const ImgList = () => {
+const ImgList = ({photos}) => {
     return (
         <div>
-            Image liste :
+            <h1>listes des images trouvé:</h1>
+            {
+                photos.map(photo =>{
+                    return (
+                        <ImgItem photo={photo.urls} key={photo.id}/>
+                    )
+                })
+            }
             
         </div>
     );
