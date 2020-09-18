@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import Spinner from '../section-Class-component/Spinner';
+import unsplashApi from './Api/unsolash';
 import ImgList from './image-list/ImgList';
 import SearchBar from './search/SearchBar';
-import axios from 'axios';
-import Spinner from '../section-Class-component/Spinner';
-import unsplashApi from './Api/unsolash'
 
-import "./AppPic.style.css"
+import "./AppPic.style.css";
 
 
 const AppPics = () => {
@@ -36,10 +35,10 @@ const AppPics = () => {
         <div className ="ui container _picContainer">
         <h1>Pics section</h1>
         <SearchBar valueInput={onSerchSubmit} />
-        <ImgList photos={photos}/>
+        
 
         {
-            loading ? <Spinner/> : `found: ${photos.length} images`
+            loading ? <Spinner/> : <ImgList photos={photos}/>
         }
         
 
