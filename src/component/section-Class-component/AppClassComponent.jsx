@@ -21,6 +21,7 @@ class AppClassComponent extends React.Component {
             
         );
 
+    //-----------------//    
     componentDidMount(){
         this.posit();
     }
