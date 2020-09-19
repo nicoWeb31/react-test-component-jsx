@@ -5,25 +5,33 @@ import "./imgitem.style.css";
 class ImgItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { span: 0 };
 
 
         //reference
         this.imagRef = React.createRef();
     }
 
-    componentDidMount(){
-        
+    componentDidMount() {
+        //attendedre que l'image soit charger pour recupérer la hauteur
+        this.imagRef.current.addEventListener('load', this.setSpans);
+    }
+
+    setSpans = () => {
+        const heiht = this.imagRef.current.clientHeight;
+        const span = Math.ceil(heiht / 10 );
+        this.setState({ span })
+
     }
 
 
 
     render() {
-        const {urls, description} = this.props.photo
+        const { urls, description } = this.props.photo
         return (
-            <>
-            <img src={urls.regular} alt={description} ref={this.imagRef}/>
-    </>
+            <div style={{ gridRowEnd: `span ${this.state.span} ` }}>
+                <img src={urls.regular} alt={description} ref={this.imagRef} />
+            </div>
         );
     }
 }
