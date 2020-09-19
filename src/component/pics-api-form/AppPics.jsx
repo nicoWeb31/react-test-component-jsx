@@ -36,10 +36,13 @@ const AppPics = () => {
         <h1>Pics section</h1>
         <SearchBar valueInput={onSerchSubmit} />
         
-
+        <div>
         {
             loading ? <Spinner/> : <ImgList photos={photos}/>
         }
+        </div>
+
+
         
 
         </div>

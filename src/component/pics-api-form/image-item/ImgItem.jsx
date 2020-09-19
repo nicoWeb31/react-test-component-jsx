@@ -1,12 +1,14 @@
 import React from 'react';
 
 
-const ImgItem = ({photo}) => {
+const ImgItem = ({ photo }) => {
     console.log(photo)
 
     return (
         <>
-            <img src={photo.small} alt=""/>
+            <div className="">
+                <img src={photo.small} alt="" style={{width:'250px'}} />
+            </div>
         </>
     );
 }
