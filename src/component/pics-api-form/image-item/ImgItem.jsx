@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+import "./imgitem.style.css";
 
 
-const ImgItem = ({ photo }) => {
-    console.log(photo)
+class ImgItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  };
 
-    return (
-        <>
-            <div className="">
-                <img src={photo.small} alt="" style={{width:'250px'}} />
-            </div>
-        </>
-    );
+
+        //reference
+        this.imagRef = React.createRef();
+    }
+
+    componentDidMount(){
+        
+    }
+
+
+
+    render() {
+        const {urls, description} = this.props.photo
+        return (
+            <>
+            <img src={urls.regular} alt={description} ref={this.imagRef}/>
+    </>
+        );
+    }
 }
 
 export default ImgItem;
