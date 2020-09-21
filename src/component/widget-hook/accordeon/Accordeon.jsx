@@ -22,11 +22,11 @@ const Accordeon = ({ items }) => {
 
         return (
             <Fragment key={item.title}>
-                <div className={`title ${ active}`}  onClick={()=>handleClick(index)}>
+                <div className={`title ${active}`}  onClick={()=>handleClick(index)}>
                     <i className="dropdown icon"></i>
                     {item.title}
                 </div>
-                <div className={`content ${ active}`}>
+                <div className={`content ${active}`}>
                     {item.content}
                 </div>
 
@@ -41,7 +41,6 @@ const Accordeon = ({ items }) => {
             <div className ="ui styled accordion">
                 {renderItems}
             </div>
-            {activeId}
         </>
     );
 }
