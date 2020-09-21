@@ -6,25 +6,29 @@ const Accordeon = ({ items }) => {
     const [activeId, setActiveId] = useState(null)
 
     const handleClick = (id) =>{
-        setActiveId(id)
+        if(activeId === id){
+            setActiveId(null)
+        }else{
+            setActiveId(id)
+        }
+
     }
 
 
     //map render item
     const renderItems = items.map((item,index) => {
+
+        const active = index === activeId ? 'active' : ''
+
         return (
             <Fragment key={item.title}>
-                <div className="title active"  onClick={()=>handleClick(index)}>
+                <div className={`title ${ active}`}  onClick={()=>handleClick(index)}>
                     <i className="dropdown icon"></i>
                     {item.title}
                 </div>
-            {
-                activeId === index ? 
-                (
-                    item.content
-                ):
-                ('')
-            }
+                <div className={`content ${ active}`}>
+                    {item.content}
+                </div>
 
             </Fragment>
         )
