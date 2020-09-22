@@ -4,10 +4,21 @@ import React from 'react';
 const List = ({ options, label,selected,onSeletedChange }) => {
 
 
-    const renderOption = options.map(({ value, label }) => {
+
+    const onClickChange = (option) =>{
+        onSeletedChange(option)
+    }
+
+    const renderOption = options.map((option) => {
         return (
-            <div className="item" key={value}>
-                {label}
+            <div 
+            className="item" 
+            key={option.value}
+            onClick={()=>onClickChange(option)}
+            
+            >
+                
+                {option.label}
             </div>
 
         )
