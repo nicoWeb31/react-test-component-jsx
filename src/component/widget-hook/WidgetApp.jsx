@@ -11,6 +11,12 @@ const WidgetApp = () => {
 
     //state Liste
     const [selected, setSelected] = useState(options[0])
+    const [showDropDown, setshowDropDown] = useState(true)
+
+
+    const onClickShowDD = () => {
+        setshowDropDown(!showDropDown)
+    }
 
     return (
         <div>
@@ -24,12 +30,20 @@ const WidgetApp = () => {
             </div>
 
             <div>
-                <List options={options}
-                    label="Select a color"
-                    selected={selected}
-                    onSeletedChange={setSelected}
 
-                />
+                <button onClick={onClickShowDD}>Toglle drop Down</button>
+
+                {
+                    showDropDown ?
+                    (<List options={options}
+                        label="Select a color"
+                        selected={selected}
+                        onSeletedChange={setSelected}
+                    />) :
+                    (null)
+                }
+
+
             </div>
 
         </div>

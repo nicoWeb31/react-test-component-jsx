@@ -9,15 +9,19 @@ const List = ({ options, label,selected,onSeletedChange }) => {
 
     // empty array run ontime at the mount component
     useEffect(()=>{
-        document.body.addEventListener('click', ({target})=>{
 
+        const onBodyClick = ({target})=>{
             //si on click dans l'element auquel on fait reference ou fait rien
             if(RefDomDropDown.current.contains(target)) return
-
             setOpen(false)
-                
-            
-        })
+        }
+        document.body.addEventListener('click', onBodyClick)
+
+
+
+        return () =>{
+            document.body.removeEventListener('click',onBodyClick)
+        }
     },[])
 
     const onClickChange = (option) =>{
