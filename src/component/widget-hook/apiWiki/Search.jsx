@@ -12,21 +12,31 @@ const Search = () => {
     
 
     useEffect(() => {
-        
-        const timeOutId = setTimeout(()=>{
 
-            if (term) {
-                ApiWiki.getData(term).then(
-                    response => setResult(response.data.query && response.data.query.search)
-                    )
+
+        if(term && !results.length){
+            ApiWiki.getData(term).then(
+                response => setResult(response.data.query && response.data.query.search)
+                )
+        }else{
+
+            const timeOutId = setTimeout(()=>{
+    
+                if (term) {
+                    ApiWiki.getData(term).then(
+                        response => setResult(response.data.query && response.data.query.search)
+                        )
+                }
+    
+            },500)
+    
+            //function invoc avant le rendu ---ici suprime le timeout du dessu, netoye le composant
+            return ()=>{
+                clearTimeout(timeOutId)
             }
 
-        },500)
-
-        //function invoc avant le rendu ---ici suprime le timeout du dessu, netoye le composant
-        return ()=>{
-            clearTimeout(timeOutId)
         }
+        
 
     }, [term])
 
@@ -60,7 +70,7 @@ const Search = () => {
             )
         })
 
-    console.log(results)
+
     return (
         <>
             <h1>Search </h1>

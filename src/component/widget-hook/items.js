@@ -13,3 +13,11 @@ export const items =[
     },
 
 ]
+
+export const options = [
+    {
+        "Red":'red',
+        "Green":'green',
+        "Blue": 'blue'
+    }
+] 

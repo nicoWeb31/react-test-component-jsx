@@ -1,7 +1,8 @@
 import React from 'react';
 import Accordeon from './accordeon/Accordeon';
 import Search from './apiWiki/Search';
-import {items} from './items'
+import {items,options} from './items'
+import List from './list/List';
 
 
 
@@ -15,6 +16,10 @@ const WidgetApp = () => {
 
             <div>
                 <Search/>
+            </div>
+
+            <div>
+                <List options={options}/>
             </div>
 
         </div>
