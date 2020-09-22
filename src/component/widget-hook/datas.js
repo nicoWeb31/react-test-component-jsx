@@ -16,8 +16,15 @@ export const items =[
 
 export const options = [
     {
-        "Red":'red',
-        "Green":'green',
-        "Blue": 'blue'
-    }
+        label: "The color Red",
+        value:"red"
+    },
+    {
+        label: "The color Green",
+        value:"green"
+    },
+    {
+        label: "The color Blue",
+        value:"blue"
+    },
 ] 

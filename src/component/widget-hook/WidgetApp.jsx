@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordeon from './accordeon/Accordeon';
 import Search from './apiWiki/Search';
-import {items,options} from './items'
+import {items,options} from './datas'
 import List from './list/List';
 
 
@@ -19,7 +19,7 @@ const WidgetApp = () => {
             </div>
 
             <div>
-                <List options={options}/>
+                <List options={options} label="Select a color"/>
             </div>
 
         </div>
