@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import List from '../list/List';
 
 import { translateOpions } from '../datas'
+import Convert from './Convert';
 
 
 
@@ -30,6 +31,11 @@ const Translate = () => {
 
             </div>
             <List options={translateOpions} selected={langage} onSeletedChange={setlangage} label='Select a language !' />
+
+            <div>
+                <Convert text={text} language={langage}/>
+            </div>
+            
 
             {text}
         </>
