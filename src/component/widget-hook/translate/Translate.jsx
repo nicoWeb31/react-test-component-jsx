@@ -22,22 +22,25 @@ const Translate = () => {
 
     return (
         <>
-            <h1>Trtanslate</h1>
+            <h1>Translate</h1>
             <div className="ui form">
                 <div className="field">
-                    <label> Enter text</label>
+                    <label> Enter text here : </label>
                     <input onChange={onChangeText} value={text} />
                 </div>
 
             </div>
             <List options={translateOpions} selected={langage} onSeletedChange={setlangage} label='Select a language !' />
 
+            <hr/>
             <div>
+            {text} : 
+            <h3 className="ui header">Output</h3>
+
                 <Convert text={text} language={langage}/>
             </div>
             
 
-            {text}
         </>
     );
 }

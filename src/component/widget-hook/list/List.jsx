@@ -59,7 +59,7 @@ const List = ({ options, label,selected,onSeletedChange }) => {
 
     return (
         <>
-            <h1>Liste - option - color</h1>
+
             <div className="ui form" style={{backgroundColor: selected.value}} ref={RefDomDropDown}>
                 <div className="field">
                     <label className='label'>

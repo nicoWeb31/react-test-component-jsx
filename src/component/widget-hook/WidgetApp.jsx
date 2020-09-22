@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Accordeon from './accordeon/Accordeon';
-import Search from './apiWiki/Search';
+import Search from './api/Search';
 import { items, options } from './datas'
 import List from './list/List';
 import Translate from './translate/Translate';
@@ -27,6 +27,7 @@ const WidgetApp = () => {
             </div>
 
             <div>
+            <h1>Liste - option - color</h1>
                 <Search />
             </div>
 
@@ -48,6 +49,7 @@ const WidgetApp = () => {
             </div>
 
             <div>
+
                 <Translate/>
             </div>
 

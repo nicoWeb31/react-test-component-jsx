@@ -43,6 +43,11 @@ export const translateOpions =[
         label: 'Hindi',
         value: 'hi'
     },
+    {
+        label:'Dutch',
+        value:'nl'
+    }
+
     
     
 
