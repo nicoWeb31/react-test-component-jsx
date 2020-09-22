@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const List = ({ options, label }) => {
+const List = ({ options, label,selected,onSeletedChange }) => {
 
 
     const renderOption = options.map(({ value, label }) => {
@@ -15,7 +15,7 @@ const List = ({ options, label }) => {
 
     return (
         <>
-            <h1>Liste - optionh - color</h1>
+            <h1>Liste - option - color</h1>
             <div className="ui form">
                 <div className="field">
                     <label className='label'>
@@ -23,7 +23,7 @@ const List = ({ options, label }) => {
                     </label>
                     <div className="ui selection dropdown visible active">
                         <i className="dropdown icon"></i>
-                        <div className="text">{label}</div>
+                        <div className="text">{selected.label}</div>
                         <div className="menu visible transition">
                             {renderOption}
                         </div>
