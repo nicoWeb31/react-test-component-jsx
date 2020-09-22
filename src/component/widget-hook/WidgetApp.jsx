@@ -3,6 +3,7 @@ import Accordeon from './accordeon/Accordeon';
 import Search from './apiWiki/Search';
 import { items, options } from './datas'
 import List from './list/List';
+import Translate from './translate/Translate';
 
 
 
@@ -44,6 +45,10 @@ const WidgetApp = () => {
                 }
 
 
+            </div>
+
+            <div>
+                <Translate/>
             </div>
 
         </div>

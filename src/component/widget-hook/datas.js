@@ -28,3 +28,22 @@ export const options = [
         value:"blue"
     },
 ] 
+
+
+export const translateOpions =[
+    {
+        label: 'Afrikaans',
+        value: 'af'
+    },
+    {
+        label: 'Arabic',
+        value: 'ar'
+    },
+    {
+        label: 'Hindi',
+        value: 'hi'
+    },
+    
+    
+
+]
