@@ -6,7 +6,7 @@ import ViewClass from './component/section-Class-component/ViewClass';
 import WidgetApp from './component/widget-hook/WidgetApp';
 import Route from './component/Route';
 import Header from './component/Header';
-import Song from './component/song-redux/Song';
+import SongList from './component/song-redux/SongList';
 
 //redux
 import { Provider } from 'react-redux';
@@ -19,41 +19,49 @@ const App = () => {
 
 
     return (
-<>
-    
-    <Header/>
+        <>
+
+            <Header />
 
 
-    <Route path='/'>
-        <ViewSection/>
-    </Route>
+            <Route path='/'>
+                <ViewSection />
+            </Route>
 
-    <Route path='/widget'>
-        <WidgetApp />
-    </Route>
+            <Route path='/widget'>
+                <WidgetApp />
+            </Route>
 
-    <Route path='/pic'>
-        <AppPics />
-    </Route>
+            <Route path='/pic'>
+                <AppPics />
+            </Route>
 
-    <Route path='/viewclass'>
-        <ViewClass/>
-    </Route>
+            <Route path='/viewclass'>
+                <ViewClass />
+            </Route>
 
-    <Route path='/songs'>
-        <Song/>
-    </Route>
+            <Route path='/songs'>
+                <div className="ui container grid">
+                    <div className=" ui row">
+                        <div className="column eight wide">
+                            <SongList />
+                        </div>
+
+                    </div>
+                </div>
+
+            </Route>
 
 
 
-</>
+        </>
     );
 }
 
 
 ReactDom.render(
-<Provider store={createStore(combineReducers)}>
-    <App />
-</Provider>,
+    <Provider store={createStore(combineReducers)}>
+        <App />
+    </Provider>,
     document.querySelector('#root')
 )
