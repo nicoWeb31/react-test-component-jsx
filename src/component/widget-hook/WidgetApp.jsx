@@ -21,15 +21,18 @@ const WidgetApp = () => {
     }
 
     return (
-        <div>
+        <>
             <h1>Widget - hook</h1>
-            <div className="">
+            <Route path='/widget/'>
                 <Accordeon items={items} />
-            </div>
+            </Route>
+
+            
 
             <div>
-            <h1>Liste - option - color</h1>
+            <Route path='/search'>
                 <Search />
+            </Route>
             </div>
 
             <div>
@@ -54,7 +57,7 @@ const WidgetApp = () => {
                 <Translate/>
             </div>
 
-        </div>
+        </>
     );
 }
 

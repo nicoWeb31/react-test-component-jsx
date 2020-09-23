@@ -4,7 +4,8 @@ import ViewSection from './component/jsx-content-props/ViewSection';
 import AppPics from './component/pics-api-form/AppPics';
 import ViewClass from './component/section-Class-component/ViewClass';
 import WidgetApp from './component/widget-hook/WidgetApp';
-import Route from './component/Route'
+import Route from './component/Route';
+import Header from './component/Header'
 
 const App = () => {
 
@@ -13,6 +14,9 @@ const App = () => {
     return (
 <>
     
+    <Header/>
+
+
     <Route path='/'>
         <ViewSection/>
     </Route>
