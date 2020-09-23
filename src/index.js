@@ -8,6 +8,11 @@ import Route from './component/Route';
 import Header from './component/Header';
 import Song from './component/song-redux/Song';
 
+//redux
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import combineReducers from './reducers'
+
 
 const App = () => {
 
@@ -47,6 +52,8 @@ const App = () => {
 
 
 ReactDom.render(
-    <App />,
+<Provider store={createStore(combineReducers)}>
+    <App />
+</Provider>,
     document.querySelector('#root')
 )
