@@ -5,7 +5,8 @@ import AppPics from './component/pics-api-form/AppPics';
 import ViewClass from './component/section-Class-component/ViewClass';
 import WidgetApp from './component/widget-hook/WidgetApp';
 import Route from './component/Route';
-import Header from './component/Header'
+import Header from './component/Header';
+
 
 const App = () => {
 
