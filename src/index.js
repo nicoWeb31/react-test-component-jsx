@@ -8,16 +8,38 @@ import WidgetApp from './component/widget-hook/WidgetApp';
 const App = () => {
 
 
+    const showWidget = () => {
+        if (window.location.pathname === '/widget') {
+            return <WidgetApp />
+        }
+    }
+    const showview = () => {
+        if (window.location.pathname === '/') {
+            return <ViewSection/>
+        }
+    }
+
+    const showviewClass = () => {
+        if (window.location.pathname === '/viewclass') {
+            return <ViewClass/>
+        }
+    }
+
+    const showPic = () => {
+        if (window.location.pathname === '/pic') {
+            return <AppPics/>
+        }
+    }
 
     return (
 <>
-    <ViewSection/>
+    {showview()}
 
-    <ViewClass/>
+    {showviewClass()}
 
-    <AppPics/>
+    {showPic()}
 
-    <WidgetApp />
+    {showWidget()}
 
 </>
     );
