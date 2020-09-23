@@ -4,6 +4,7 @@ import Search from './api/Search';
 import { items, options } from './datas'
 import List from './list/List';
 import Translate from './translate/Translate';
+import Route from '../Route'
 
 
 
@@ -14,35 +15,6 @@ const WidgetApp = () => {
     const [selected, setSelected] = useState(options[0])
     const [showDropDown, setshowDropDown] = useState(true)
 
-    //navvigation fromscratch
-    const showAccordion = () => {
-        if (window.location.pathname === '/widget') {
-            return <Accordeon items={items} />
-        }
-    }
-
-    const showList = () => {
-        if (window.location.pathname === '/list') {
-            return <List options={options}
-                label="Select a color"
-                selected={selected}
-                onSeletedChange={setSelected}
-            />
-        }
-    }
-
-    const showSearch = () => {
-        if (window.location.pathname === '/search') {
-            return <Search />
-        }
-    }
-
-    const showTranslate = () => {
-        if (window.location.pathname === 'widget/translate') {
-            return <Translate />
-        }
-    }
-
 
     const onClickShowDD = () => {
         setshowDropDown(!showDropDown)
@@ -51,17 +23,14 @@ const WidgetApp = () => {
     return (
         <div>
             <h1>Widget - hook</h1>
-            <div>
-
-                {showAccordion()}
+            <div className="">
+                <Accordeon items={items} />
             </div>
-            <hr />
-
 
             <div>
-                {showSearch()}
+            <h1>Liste - option - color</h1>
+                <Search />
             </div>
-            <hr />
 
             <div>
 
@@ -69,16 +38,20 @@ const WidgetApp = () => {
 
                 {
                     showDropDown ?
-                        (showList()) :
-                        (null)
+                    (<List options={options}
+                        label="Select a color"
+                        selected={selected}
+                        onSeletedChange={setSelected}
+                    />) :
+                    (null)
                 }
-            </div>
-            <hr />
 
+
+            </div>
 
             <div>
-                {showTranslate()}
 
+                <Translate/>
             </div>
 
         </div>

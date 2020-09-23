@@ -4,42 +4,32 @@ import ViewSection from './component/jsx-content-props/ViewSection';
 import AppPics from './component/pics-api-form/AppPics';
 import ViewClass from './component/section-Class-component/ViewClass';
 import WidgetApp from './component/widget-hook/WidgetApp';
+import Route from './component/Route'
 
 const App = () => {
 
 
-    const showWidget = () => {
-        if (window.location.pathname === '/widget') {
-            return <WidgetApp />
-        }
-    }
-    const showview = () => {
-        if (window.location.pathname === '/') {
-            return <ViewSection/>
-        }
-    }
-
-    const showviewClass = () => {
-        if (window.location.pathname === '/viewclass') {
-            return <ViewClass/>
-        }
-    }
-
-    const showPic = () => {
-        if (window.location.pathname === '/pic') {
-            return <AppPics/>
-        }
-    }
 
     return (
 <>
-    {showview()}
+    
+    <Route path='/'>
+        <ViewSection/>
+    </Route>
 
-    {showviewClass()}
+    <Route path='/widget'>
+        <WidgetApp />
+    </Route>
 
-    {showPic()}
+    <Route path='/pic'>
+        <AppPics />
+    </Route>
 
-    {showWidget()}
+    <Route path='/viewclass'>
+        <ViewClass/>
+    </Route>
+
+
 
 </>
     );
