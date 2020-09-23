@@ -9,6 +9,8 @@ const Header = () => {
             <Link href="/widget" className='item'>widget</Link>
             <Link href="/pic" className='item'>pictures</Link>
             <Link href="/viewclass" className='item'>Class Comp</Link>
+            <Link href="/songs" className='item'>Song</Link>
+
 
         </div>
     );

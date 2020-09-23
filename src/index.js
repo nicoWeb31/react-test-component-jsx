@@ -6,6 +6,7 @@ import ViewClass from './component/section-Class-component/ViewClass';
 import WidgetApp from './component/widget-hook/WidgetApp';
 import Route from './component/Route';
 import Header from './component/Header';
+import Song from './component/song-redux/Song';
 
 
 const App = () => {
@@ -32,6 +33,10 @@ const App = () => {
 
     <Route path='/viewclass'>
         <ViewClass/>
+    </Route>
+
+    <Route path='/songs'>
+        <Song/>
     </Route>
 
 
