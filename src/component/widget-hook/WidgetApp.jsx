@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Accordeon from './accordeon/Accordeon';
-import Search from './api/Search';
+
 import { items, options } from './datas'
 import List from './list/List';
 import Translate from './translate/Translate';
 import Route from '../Route'
+import Search from './Search';
 
 
 

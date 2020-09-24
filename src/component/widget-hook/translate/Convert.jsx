@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import apiGoogle from "../api/googleTranslate/ApiGoogleTranslate"
+import apiGoogle from "../../../api/ApiGoogleTranslate"
 
 
 const Convert = ({text,language}) => {
