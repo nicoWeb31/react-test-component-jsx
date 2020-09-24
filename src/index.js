@@ -12,6 +12,7 @@ import SongList from './component/song-redux/SongList';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import combineReducers from './reducers'
+import SongItem from './component/song-redux/SongItem';
 
 
 const App = () => {
@@ -45,6 +46,9 @@ const App = () => {
                     <div className=" ui row">
                         <div className="column eight wide">
                             <SongList />
+                        </div>
+                        <div className="column four wide">
+                            <SongItem />
                         </div>
 
                     </div>

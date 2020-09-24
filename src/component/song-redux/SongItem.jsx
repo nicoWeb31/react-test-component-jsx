@@ -1,19 +1,33 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux'
 
 
-const SongItem = ({ song: { title } }) => {
+const SongItem = ({ song }) => {
+
+
+
+
     return (
 
         <>
-            <div className='rigth floated content'>
-                <button className='ui button primary'>Select</button>
-            </div>
-            <div className="content">
-                {title}
-            </div>
+
+        <h2>Song details</h2>
+
+            {song && (
+                <>
+                    <h3>Titre : {song.title}</h3>
+                    <h3>Duration : {song.duration}</h3>
+                </>
+            )}
 
         </>
     );
 }
 
-export default SongItem;
+
+const mapStateToProps = state => {
+    console.log(state)
+    return { song: state.selectedSong }
+}
+
+export default connect(mapStateToProps)(SongItem);

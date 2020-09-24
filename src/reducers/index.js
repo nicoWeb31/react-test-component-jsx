@@ -21,6 +21,12 @@ const songReducer = () =>{
     ]
 }
 
+const toto = ()=>{
+    return [
+        {name: 'toto'}
+    ]
+}
+
 
 const selectedSongReducer = (selectedSong = null, action) =>{
     if(action.type === 'SONG_SELECTED'){
@@ -33,5 +39,6 @@ const selectedSongReducer = (selectedSong = null, action) =>{
 
 export default combineReducers({
     songList : songReducer,
-    selectedSong : selectedSongReducer
+    selectedSong : selectedSongReducer,
+    toto
 })
