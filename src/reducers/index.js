@@ -1,4 +1,5 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
+import {postReducer} from "../reducers/postRducer"
 
 
 
@@ -36,13 +37,13 @@ const selectedSongReducer = (selectedSong = null, action) =>{
 }
 
 
-//reducer blog
-
 
 
 //export
 export default combineReducers({
     songList : songReducer,
     selectedSong : selectedSongReducer,
+    posts: postReducer
+
 
 })
