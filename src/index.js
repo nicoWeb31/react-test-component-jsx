@@ -10,10 +10,13 @@ import SongList from './component/song-redux/SongList';
 
 //redux
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore,applyMiddleware } from 'redux';
 import combineReducers from './reducers'
 import SongItem from './component/song-redux/SongItem';
 import AppBlog from './component/blog/AppBlog';
+import thunk from 'redux-thunk'
+
+
 
 
 const App = () => {
@@ -68,8 +71,10 @@ const App = () => {
 }
 
 
+const store = createStore(combineReducers,applyMiddleware(thunk))
+
 ReactDom.render(
-    <Provider store={createStore(combineReducers)}>
+    <Provider store={store}>
         <App />
     </Provider>,
     document.querySelector('#root')

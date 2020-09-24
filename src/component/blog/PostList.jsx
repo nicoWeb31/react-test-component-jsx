@@ -15,7 +15,7 @@ class PostList extends Component {
     }
 
     render() {
-        console.log(this.props.fetchPosts())
+        console.log(this.props.fetchPosts)
         return (
             <div>
                 Post List

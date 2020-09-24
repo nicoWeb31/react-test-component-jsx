@@ -12,12 +12,13 @@ export const selectSong = song =>{
 
 //blog
 //fetch post
-export const fetchPosts = async() =>{
+export const fetchPosts = () => async(dispatch) =>{
+        
+        const response = await ApiPlacholder.fetchPost();
 
-    const response = await ApiPlacholder.fetchPosts();
+        dispatch({type:'FETCH_POSTS', payload: response})
 
-    return {
-        type:"FETCH_POSTS",
-        payload:response
     }
-}
+
+
+
