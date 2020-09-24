@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import combineReducers from './reducers'
 import SongItem from './component/song-redux/SongItem';
+import AppBlog from './component/blog/AppBlog';
 
 
 const App = () => {
@@ -54,6 +55,10 @@ const App = () => {
                     </div>
                 </div>
 
+            </Route>
+
+            <Route path='/blog'>
+                <AppBlog />
             </Route>
 
 
