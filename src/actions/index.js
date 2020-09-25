@@ -1,4 +1,5 @@
-import ApiPlacholder from '../api/JsonPlaceholder'
+import ApiPlacholder from '../api/JsonPlaceholder';
+import _ from 'lodash'
 
 
 //select a song
@@ -21,15 +22,36 @@ export const fetchPosts = () => async(dispatch) =>{
     }
 
 //fecth user with id
+//memoize 'mise en cach'
 
-export const fetchUser = (id) => async(dispatch)=>{
-    const response = await ApiPlacholder.fetchUser(id);
+export const fetchUser = function(id){
 
-    dispatch({
-        type :'FETCH_USER',
-        payload: response.data
-    })
+
+    return async function(dispatch){
+        const response = await ApiPlacholder.fetchUser(id);
+    
+        dispatch({
+            type :'FETCH_USER',
+            payload: response.data
+        })
+    }
+
 }
+
+
+// export const fetchPostAndUsers = () => async (dispatch,getState) =>{
+
+//     await dispatch(fetchPosts())
+
+//     //loadach syntax
+
+//     const userId = _.uniq(_.map(getState().posts, 'userId'))
+
+//     userId.forEach(id => {
+//         dispatch (fetchUser(id))
+//     });
+
+// }
 
 
 

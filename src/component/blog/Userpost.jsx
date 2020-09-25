@@ -24,23 +24,19 @@ class Userpost extends Component {
 
     render() {
 
-        //console.log(this.props.users)
-        // const {name} = this.state.user ;
-        const user = this.props.users.find(u => u.id === this.props.userId)
-
 
         return (
 
-            <div className='header'><span>{user ? user.name : '.........'}</span></div>
+            <div className='header'><span>{this.props.user ? this.props.user.name : '.........'}</span></div>
 
         );
     }
 }
 
-
-const mapStateToProps = state => {
+///deux argument le state et les props du compo
+const mapStateToProps = (state,ownProps) => {
     return ({
-        users: state.users
+        user: state.users.find(u => u.id === ownProps.userId)
     })
 }
 
