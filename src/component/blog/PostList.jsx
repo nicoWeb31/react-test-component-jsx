@@ -11,11 +11,13 @@ class PostList extends Component {
     }
 
     componentDidMount(){
+        //apeller la methode fetch de l'action 
+        //une fois call charge les datas dans le state, reste  a le recuperer via map state to props
         this.props.fetchPosts();
     }
 
     render() {
-        console.log(this.props.fetchPosts)
+        console.log(this.props.posts)
         return (
             <div>
                 Post List
@@ -25,6 +27,8 @@ class PostList extends Component {
 }
 
 
+const mapStateToProps = state =>{
+    return ({posts: state.posts})
+}
 
-
-export default connect(null, {fetchPosts})(PostList);
+export default connect(mapStateToProps, {fetchPosts})(PostList);
