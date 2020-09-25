@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 
-const Axios = () =>{
-    return axios.create({
-        baseURL:"https://jsonplaceholder.typicode.com/"
-    })
-}
+// const Axios = () =>{
+//     return axios.create({
+//         baseURL:"https://jsonplaceholder.typicode.com/"
+//     })
+// }
 
 
 const fetchPost =  () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {fetchPosts, fetchUser} from '../../actions'
+import { connect } from 'react-redux';
+import { fetchPosts } from '../../actions';
 import Userpost from './Userpost';
 
 
@@ -40,7 +40,7 @@ class PostList extends Component {
     }
 
     render() {
-        console.log(this.props.posts)
+
         return (
             <div>
                 <h1>Post list</h1>

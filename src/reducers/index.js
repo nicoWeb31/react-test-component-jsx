@@ -45,7 +45,7 @@ export default combineReducers({
     songList : songReducer,
     selectedSong : selectedSongReducer,
     posts: postReducer,
-    user: userReducer
+    users: userReducer
 
 
 })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import {connect} from 'react-redux'
-import {fetchUser} from '../../actions'
+import { connect } from 'react-redux'
+import { fetchUser } from '../../actions'
 
 
 
@@ -10,38 +10,39 @@ import {fetchUser} from '../../actions'
 class Userpost extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = {};
     }
 
-    
-    componentDidMount(){
-        //apeller la methode fetch de l'action 
-        //une fois call charge les datas dans le state, reste  a le recuperer via map state to props
-    
+
+    componentDidMount() {
+
+
         this.props.fetchUser(this.props.userId);
-        
-        
-        
+
     }
 
 
     render() {
 
-        console.log(this.props.user)
+        //console.log(this.props.users)
         // const {name} = this.state.user ;
+        const user = this.props.users.find(u => u.id === this.props.userId)
+
 
         return (
-                <h2>Author:{this.props.user.name}</h2>
-            );
-        }
+
+            <div className='header'><span>{user ? user.name : '.........'}</span></div>
+
+        );
     }
+}
 
 
-    const mapStateToProps = state => {
-        return ({
-            user: state.user
-        })
-    }
-    
-    
-    export default connect(mapStateToProps,{fetchUser})(Userpost);
+const mapStateToProps = state => {
+    return ({
+        users: state.users
+    })
+}
+
+
+export default connect(mapStateToProps, { fetchUser })(Userpost);
